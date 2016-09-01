@@ -1,0 +1,505 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A71BE0E81D78BD1800D0D603 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71BE0E71D78BD1800D0D603 /* AppDelegate.swift */; };
+		A71BE0EA1D78BD1800D0D603 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71BE0E91D78BD1800D0D603 /* ViewController.swift */; };
+		A71BE0ED1D78BD1800D0D603 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A71BE0EB1D78BD1800D0D603 /* Main.storyboard */; };
+		A71BE0EF1D78BD1800D0D603 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A71BE0EE1D78BD1800D0D603 /* Assets.xcassets */; };
+		A71BE0F21D78BD1800D0D603 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A71BE0F01D78BD1800D0D603 /* LaunchScreen.storyboard */; };
+		A71BE0FD1D78BD1900D0D603 /* timelapseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71BE0FC1D78BD1900D0D603 /* timelapseTests.swift */; };
+		A71BE1081D78BD1900D0D603 /* timelapseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71BE1071D78BD1900D0D603 /* timelapseUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A71BE0F91D78BD1800D0D603 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A71BE0DC1D78BD1800D0D603 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A71BE0E31D78BD1800D0D603;
+			remoteInfo = timelapse;
+		};
+		A71BE1041D78BD1900D0D603 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A71BE0DC1D78BD1800D0D603 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A71BE0E31D78BD1800D0D603;
+			remoteInfo = timelapse;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A71BE0E41D78BD1800D0D603 /* timelapse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = timelapse.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A71BE0E71D78BD1800D0D603 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A71BE0E91D78BD1800D0D603 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A71BE0EC1D78BD1800D0D603 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A71BE0EE1D78BD1800D0D603 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A71BE0F11D78BD1800D0D603 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A71BE0F31D78BD1800D0D603 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A71BE0F81D78BD1800D0D603 /* timelapseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = timelapseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A71BE0FC1D78BD1900D0D603 /* timelapseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timelapseTests.swift; sourceTree = "<group>"; };
+		A71BE0FE1D78BD1900D0D603 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A71BE1031D78BD1900D0D603 /* timelapseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = timelapseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A71BE1071D78BD1900D0D603 /* timelapseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timelapseUITests.swift; sourceTree = "<group>"; };
+		A71BE1091D78BD1900D0D603 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A71BE0E11D78BD1800D0D603 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A71BE0F51D78BD1800D0D603 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A71BE1001D78BD1900D0D603 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A71BE0DB1D78BD1800D0D603 = {
+			isa = PBXGroup;
+			children = (
+				A71BE0E61D78BD1800D0D603 /* timelapse */,
+				A71BE0FB1D78BD1900D0D603 /* timelapseTests */,
+				A71BE1061D78BD1900D0D603 /* timelapseUITests */,
+				A71BE0E51D78BD1800D0D603 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A71BE0E51D78BD1800D0D603 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A71BE0E41D78BD1800D0D603 /* timelapse.app */,
+				A71BE0F81D78BD1800D0D603 /* timelapseTests.xctest */,
+				A71BE1031D78BD1900D0D603 /* timelapseUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A71BE0E61D78BD1800D0D603 /* timelapse */ = {
+			isa = PBXGroup;
+			children = (
+				A71BE0E71D78BD1800D0D603 /* AppDelegate.swift */,
+				A71BE0E91D78BD1800D0D603 /* ViewController.swift */,
+				A71BE0EB1D78BD1800D0D603 /* Main.storyboard */,
+				A71BE0EE1D78BD1800D0D603 /* Assets.xcassets */,
+				A71BE0F01D78BD1800D0D603 /* LaunchScreen.storyboard */,
+				A71BE0F31D78BD1800D0D603 /* Info.plist */,
+			);
+			path = timelapse;
+			sourceTree = "<group>";
+		};
+		A71BE0FB1D78BD1900D0D603 /* timelapseTests */ = {
+			isa = PBXGroup;
+			children = (
+				A71BE0FC1D78BD1900D0D603 /* timelapseTests.swift */,
+				A71BE0FE1D78BD1900D0D603 /* Info.plist */,
+			);
+			path = timelapseTests;
+			sourceTree = "<group>";
+		};
+		A71BE1061D78BD1900D0D603 /* timelapseUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A71BE1071D78BD1900D0D603 /* timelapseUITests.swift */,
+				A71BE1091D78BD1900D0D603 /* Info.plist */,
+			);
+			path = timelapseUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A71BE0E31D78BD1800D0D603 /* timelapse */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A71BE10C1D78BD1900D0D603 /* Build configuration list for PBXNativeTarget "timelapse" */;
+			buildPhases = (
+				A71BE0E01D78BD1800D0D603 /* Sources */,
+				A71BE0E11D78BD1800D0D603 /* Frameworks */,
+				A71BE0E21D78BD1800D0D603 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = timelapse;
+			productName = timelapse;
+			productReference = A71BE0E41D78BD1800D0D603 /* timelapse.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A71BE0F71D78BD1800D0D603 /* timelapseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A71BE10F1D78BD1900D0D603 /* Build configuration list for PBXNativeTarget "timelapseTests" */;
+			buildPhases = (
+				A71BE0F41D78BD1800D0D603 /* Sources */,
+				A71BE0F51D78BD1800D0D603 /* Frameworks */,
+				A71BE0F61D78BD1800D0D603 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A71BE0FA1D78BD1800D0D603 /* PBXTargetDependency */,
+			);
+			name = timelapseTests;
+			productName = timelapseTests;
+			productReference = A71BE0F81D78BD1800D0D603 /* timelapseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A71BE1021D78BD1900D0D603 /* timelapseUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A71BE1121D78BD1900D0D603 /* Build configuration list for PBXNativeTarget "timelapseUITests" */;
+			buildPhases = (
+				A71BE0FF1D78BD1900D0D603 /* Sources */,
+				A71BE1001D78BD1900D0D603 /* Frameworks */,
+				A71BE1011D78BD1900D0D603 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A71BE1051D78BD1900D0D603 /* PBXTargetDependency */,
+			);
+			name = timelapseUITests;
+			productName = timelapseUITests;
+			productReference = A71BE1031D78BD1900D0D603 /* timelapseUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A71BE0DC1D78BD1800D0D603 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Nikita Simakov";
+				TargetAttributes = {
+					A71BE0E31D78BD1800D0D603 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					A71BE0F71D78BD1800D0D603 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = A71BE0E31D78BD1800D0D603;
+					};
+					A71BE1021D78BD1900D0D603 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = A71BE0E31D78BD1800D0D603;
+					};
+				};
+			};
+			buildConfigurationList = A71BE0DF1D78BD1800D0D603 /* Build configuration list for PBXProject "timelapse" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A71BE0DB1D78BD1800D0D603;
+			productRefGroup = A71BE0E51D78BD1800D0D603 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A71BE0E31D78BD1800D0D603 /* timelapse */,
+				A71BE0F71D78BD1800D0D603 /* timelapseTests */,
+				A71BE1021D78BD1900D0D603 /* timelapseUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A71BE0E21D78BD1800D0D603 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A71BE0F21D78BD1800D0D603 /* LaunchScreen.storyboard in Resources */,
+				A71BE0EF1D78BD1800D0D603 /* Assets.xcassets in Resources */,
+				A71BE0ED1D78BD1800D0D603 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A71BE0F61D78BD1800D0D603 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A71BE1011D78BD1900D0D603 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A71BE0E01D78BD1800D0D603 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A71BE0EA1D78BD1800D0D603 /* ViewController.swift in Sources */,
+				A71BE0E81D78BD1800D0D603 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A71BE0F41D78BD1800D0D603 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A71BE0FD1D78BD1900D0D603 /* timelapseTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A71BE0FF1D78BD1900D0D603 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A71BE1081D78BD1900D0D603 /* timelapseUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A71BE0FA1D78BD1800D0D603 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A71BE0E31D78BD1800D0D603 /* timelapse */;
+			targetProxy = A71BE0F91D78BD1800D0D603 /* PBXContainerItemProxy */;
+		};
+		A71BE1051D78BD1900D0D603 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A71BE0E31D78BD1800D0D603 /* timelapse */;
+			targetProxy = A71BE1041D78BD1900D0D603 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A71BE0EB1D78BD1800D0D603 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A71BE0EC1D78BD1800D0D603 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A71BE0F01D78BD1800D0D603 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A71BE0F11D78BD1800D0D603 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A71BE10A1D78BD1900D0D603 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A71BE10B1D78BD1900D0D603 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A71BE10D1D78BD1900D0D603 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = timelapse/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = everm1nd.inc.timelapse;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A71BE10E1D78BD1900D0D603 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = timelapse/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = everm1nd.inc.timelapse;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A71BE1101D78BD1900D0D603 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = timelapseTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = everm1nd.inc.timelapseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/timelapse.app/timelapse";
+			};
+			name = Debug;
+		};
+		A71BE1111D78BD1900D0D603 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = timelapseTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = everm1nd.inc.timelapseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/timelapse.app/timelapse";
+			};
+			name = Release;
+		};
+		A71BE1131D78BD1900D0D603 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = timelapseUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = everm1nd.inc.timelapseUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = timelapse;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		A71BE1141D78BD1900D0D603 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = timelapseUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = everm1nd.inc.timelapseUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = timelapse;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A71BE0DF1D78BD1800D0D603 /* Build configuration list for PBXProject "timelapse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A71BE10A1D78BD1900D0D603 /* Debug */,
+				A71BE10B1D78BD1900D0D603 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A71BE10C1D78BD1900D0D603 /* Build configuration list for PBXNativeTarget "timelapse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A71BE10D1D78BD1900D0D603 /* Debug */,
+				A71BE10E1D78BD1900D0D603 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A71BE10F1D78BD1900D0D603 /* Build configuration list for PBXNativeTarget "timelapseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A71BE1101D78BD1900D0D603 /* Debug */,
+				A71BE1111D78BD1900D0D603 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A71BE1121D78BD1900D0D603 /* Build configuration list for PBXNativeTarget "timelapseUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A71BE1131D78BD1900D0D603 /* Debug */,
+				A71BE1141D78BD1900D0D603 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A71BE0DC1D78BD1800D0D603 /* Project object */;
+}
