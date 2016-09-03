@@ -4,7 +4,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -20,20 +19,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fQM-Li-eWD">
-                                <rect key="frame" x="20" y="20" width="560" height="560"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="fQM-Li-eWD" secondAttribute="height" multiplier="1:1" id="0eo-qv-j0X"/>
+                                    <constraint firstAttribute="width" secondItem="fQM-Li-eWD" secondAttribute="height" multiplier="1:1" id="IzG-RB-Ohq"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="fQM-Li-eWD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CW1-c8-aXi"/>
-                            <constraint firstItem="fQM-Li-eWD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hB4-g3-13m"/>
-                            <constraint firstItem="fQM-Li-eWD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="xeq-yK-imd"/>
+                            <constraint firstAttribute="trailing" secondItem="fQM-Li-eWD" secondAttribute="trailing" id="GYC-bs-5sb"/>
+                            <constraint firstItem="fQM-Li-eWD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="JtW-LJ-GVK"/>
+                            <constraint firstItem="fQM-Li-eWD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KCp-hQ-5Ct"/>
+                            <constraint firstItem="fQM-Li-eWD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="WFR-Yk-sRj"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="fQM-Li-eWD" id="Xyo-GL-k2O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
