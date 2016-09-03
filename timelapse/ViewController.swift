@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     var images: PHFetchResult!
     var imageManager: PHImageManager!
     var imageIndex = 0;
+    var imageSize: CGSize!
     
     var timer: NSTimer!
     
@@ -39,27 +40,29 @@ class ViewController: UIViewController {
     func warmupCache() -> Void {
         let frame = photoImageView.frame.size
         let sizeFactor = CGFloat(2) // without this photos looks blurred on retina
-        let imageSize = CGSize(width: frame.width * sizeFactor,
+        self.imageSize = CGSize(width: frame.width * sizeFactor,
             height: frame.height * sizeFactor)
         
-        images.enumerateObjectsUsingBlock { (object: AnyObject, index: Int, stop) -> Void in
-            let asset = object as! PHAsset
-            
-            let options = PHImageRequestOptions()
-            options.synchronous = true
-            options.deliveryMode = .HighQualityFormat
-            options.resizeMode = .Exact
-            
-            self.imageManager.requestImageForAsset(asset,
-                targetSize: imageSize,
-                contentMode: .AspectFill,
-                options: options,
-                resultHandler: {
-                    image, info in
-                    debugPrint(image)
-                    self.cachedImages.append((image as UIImage?)!)
-            })
-       }
+        images.enumerateObjectsUsingBlock(fetchImage)
+    }
+    
+    func fetchImage(object: AnyObject, index: Int, _: UnsafeMutablePointer<ObjCBool>) {
+        let asset = object as! PHAsset
+        
+        let options = PHImageRequestOptions()
+        options.synchronous = true
+        options.deliveryMode = .HighQualityFormat
+        options.resizeMode = .Exact
+        
+        self.imageManager.requestImageForAsset(asset,
+            targetSize: self.imageSize,
+            contentMode: .AspectFill,
+            options: options,
+            resultHandler: {
+                image, info in
+                debugPrint(image)
+                self.cachedImages.append((image as UIImage?)!)
+        })
     }
     
     func updateImageView() -> Void {
