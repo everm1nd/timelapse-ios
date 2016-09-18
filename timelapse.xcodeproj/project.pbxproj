@@ -97,8 +97,11 @@
 		A71BE0E61D78BD1800D0D603 /* timelapse */ = {
 			isa = PBXGroup;
 			children = (
+				A75F590E1D8EE2A900AEF0AB /* Controllers */,
+				A75F59101D8EE2BA00AEF0AB /* Services */,
+				A75F590F1D8EE2AF00AEF0AB /* Models */,
+				A75F59111D8EE2C400AEF0AB /* ViewControllers */,
 				A71BE0E71D78BD1800D0D603 /* AppDelegate.swift */,
-				A71BE0E91D78BD1800D0D603 /* ViewController.swift */,
 				A71BE0EB1D78BD1800D0D603 /* Main.storyboard */,
 				A71BE0EE1D78BD1800D0D603 /* Assets.xcassets */,
 				A71BE0F01D78BD1800D0D603 /* LaunchScreen.storyboard */,
@@ -123,6 +126,35 @@
 				A71BE1091D78BD1900D0D603 /* Info.plist */,
 			);
 			path = timelapseUITests;
+			sourceTree = "<group>";
+		};
+		A75F590E1D8EE2A900AEF0AB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A71BE0E91D78BD1800D0D603 /* ViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		A75F590F1D8EE2AF00AEF0AB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		A75F59101D8EE2BA00AEF0AB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		A75F59111D8EE2C400AEF0AB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
