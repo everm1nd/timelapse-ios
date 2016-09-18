@@ -126,10 +126,10 @@
                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Preview &gt;"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="Tfb-u5-oT6"/>
+                                </connections>
                             </button>
-                            <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="ULU-3c-iSt"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <userDefinedRuntimeAttributes>
