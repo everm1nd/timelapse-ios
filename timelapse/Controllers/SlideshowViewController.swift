@@ -9,7 +9,7 @@
 import UIKit
 import Photos
 
-class ViewController: UIViewController {
+class SlideshowViewController: UIViewController {
 
     @IBOutlet weak var photoImageView: UIImageView!
     
@@ -99,16 +99,20 @@ class ViewController: UIViewController {
     }
     
     @IBAction func imageTap(_ sender: UITapGestureRecognizer) {
+        toggleTimer()
+    }
+    
+    func startTimer() {
+        self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(SlideshowViewController.updateImageView), userInfo: nil, repeats: true)
+    }
+    
+    func toggleTimer() {
         if let timer = self.timer {
             timer.invalidate()
             self.timer = nil
         } else {
             startTimer()
         }
-    }
-    
-    func startTimer() {
-        self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(ViewController.updateImageView), userInfo: nil, repeats: true)
     }
 
 }

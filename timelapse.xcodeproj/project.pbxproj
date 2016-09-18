@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		A71BE0E81D78BD1800D0D603 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71BE0E71D78BD1800D0D603 /* AppDelegate.swift */; };
-		A71BE0EA1D78BD1800D0D603 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71BE0E91D78BD1800D0D603 /* ViewController.swift */; };
+		A71BE0EA1D78BD1800D0D603 /* SlideshowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71BE0E91D78BD1800D0D603 /* SlideshowViewController.swift */; };
 		A71BE0ED1D78BD1800D0D603 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A71BE0EB1D78BD1800D0D603 /* Main.storyboard */; };
 		A71BE0EF1D78BD1800D0D603 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A71BE0EE1D78BD1800D0D603 /* Assets.xcassets */; };
 		A71BE0F21D78BD1800D0D603 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A71BE0F01D78BD1800D0D603 /* LaunchScreen.storyboard */; };
 		A71BE0FD1D78BD1900D0D603 /* timelapseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71BE0FC1D78BD1900D0D603 /* timelapseTests.swift */; };
 		A71BE1081D78BD1900D0D603 /* timelapseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71BE1071D78BD1900D0D603 /* timelapseUITests.swift */; };
+		A78471BE1D8EE45500A306E1 /* AssetsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78471BD1D8EE45500A306E1 /* AssetsStorage.swift */; };
+		A78471C01D8EE48A00A306E1 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78471BF1D8EE48A00A306E1 /* CollectionHeaderView.swift */; };
+		A78471C21D8EE4BC00A306E1 /* AssetsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78471C11D8EE4BC00A306E1 /* AssetsCollectionViewCell.swift */; };
+		A78471C41D8EE4DA00A306E1 /* SelectAssetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78471C31D8EE4DA00A306E1 /* SelectAssetsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +40,7 @@
 /* Begin PBXFileReference section */
 		A71BE0E41D78BD1800D0D603 /* timelapse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = timelapse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A71BE0E71D78BD1800D0D603 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A71BE0E91D78BD1800D0D603 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A71BE0E91D78BD1800D0D603 /* SlideshowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideshowViewController.swift; sourceTree = "<group>"; };
 		A71BE0EC1D78BD1800D0D603 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A71BE0EE1D78BD1800D0D603 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A71BE0F11D78BD1800D0D603 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +51,10 @@
 		A71BE1031D78BD1900D0D603 /* timelapseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = timelapseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A71BE1071D78BD1900D0D603 /* timelapseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timelapseUITests.swift; sourceTree = "<group>"; };
 		A71BE1091D78BD1900D0D603 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A78471BD1D8EE45500A306E1 /* AssetsStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsStorage.swift; sourceTree = "<group>"; };
+		A78471BF1D8EE48A00A306E1 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
+		A78471C11D8EE4BC00A306E1 /* AssetsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsCollectionViewCell.swift; sourceTree = "<group>"; };
+		A78471C31D8EE4DA00A306E1 /* SelectAssetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectAssetsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +108,7 @@
 				A75F590E1D8EE2A900AEF0AB /* Controllers */,
 				A75F59101D8EE2BA00AEF0AB /* Services */,
 				A75F590F1D8EE2AF00AEF0AB /* Models */,
-				A75F59111D8EE2C400AEF0AB /* ViewControllers */,
+				A75F59111D8EE2C400AEF0AB /* Views */,
 				A71BE0E71D78BD1800D0D603 /* AppDelegate.swift */,
 				A71BE0EB1D78BD1800D0D603 /* Main.storyboard */,
 				A71BE0EE1D78BD1800D0D603 /* Assets.xcassets */,
@@ -131,30 +139,34 @@
 		A75F590E1D8EE2A900AEF0AB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A71BE0E91D78BD1800D0D603 /* ViewController.swift */,
+				A78471C31D8EE4DA00A306E1 /* SelectAssetsViewController.swift */,
+				A71BE0E91D78BD1800D0D603 /* SlideshowViewController.swift */,
 			);
-			name = Controllers;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		A75F590F1D8EE2AF00AEF0AB /* Models */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Models;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		A75F59101D8EE2BA00AEF0AB /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				A78471BD1D8EE45500A306E1 /* AssetsStorage.swift */,
 			);
-			name = Services;
+			path = Services;
 			sourceTree = "<group>";
 		};
-		A75F59111D8EE2C400AEF0AB /* ViewControllers */ = {
+		A75F59111D8EE2C400AEF0AB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A78471C11D8EE4BC00A306E1 /* AssetsCollectionViewCell.swift */,
+				A78471BF1D8EE48A00A306E1 /* CollectionHeaderView.swift */,
 			);
-			name = ViewControllers;
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,7 +232,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Nikita Simakov";
 				TargetAttributes = {
 					A71BE0E31D78BD1800D0D603 = {
@@ -291,7 +303,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A71BE0EA1D78BD1800D0D603 /* ViewController.swift in Sources */,
+				A78471C41D8EE4DA00A306E1 /* SelectAssetsViewController.swift in Sources */,
+				A78471C21D8EE4BC00A306E1 /* AssetsCollectionViewCell.swift in Sources */,
+				A71BE0EA1D78BD1800D0D603 /* SlideshowViewController.swift in Sources */,
+				A78471C01D8EE48A00A306E1 /* CollectionHeaderView.swift in Sources */,
+				A78471BE1D8EE45500A306E1 /* AssetsStorage.swift in Sources */,
 				A71BE0E81D78BD1800D0D603 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,8 +376,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -404,8 +422,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -424,6 +444,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
