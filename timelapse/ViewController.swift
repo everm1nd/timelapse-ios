@@ -13,28 +13,51 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var photoImageView: UIImageView!
     
-    var images: PHFetchResult!
+    var assets: PHFetchResult<PHAsset>!
     var imageManager: PHImageManager!
     var imageIndex = 0;
     var imageSize: CGSize!
     
-    var timer: NSTimer!
+    var timer: Timer!
     
     var cachedImages = [UIImage]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        images = PHAsset.fetchAssetsWithMediaType(.Image, options: nil)
-        imageManager = PHImageManager()
-        warmupCache()
-        updateImageView() // update it once, becasue timer first fires after N miliseconds
-        startTimer()
+        authorizeForPhotosAccess(
+            success: {
+                self.assets = PHAsset.fetchAssets(with: .image, options: nil)
+                self.imageManager = PHImageManager()
+                self.warmupCache()
+                self.updateImageView() // update it once, becasue timer first fires after N miliseconds
+                self.startTimer()
+            }
+        )
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func authorizeForPhotosAccess(success: @escaping () -> Void, failure: (() -> Void)? = nil) {
+        PHPhotoLibrary.requestAuthorization({ (status: PHAuthorizationStatus) in
+            switch (status) {
+            case .authorized:
+                success()
+                break;
+                
+            default:
+                if (failure != nil) {
+                    failure!()
+                } else {
+                    debugPrint("Photos authorization declined.")
+                    exit(0)
+                }
+                break;
+            }
+        })
     }
     
     func warmupCache() -> Void {
@@ -43,40 +66,39 @@ class ViewController: UIViewController {
         self.imageSize = CGSize(width: frame.width * sizeFactor,
             height: frame.height * sizeFactor)
         
-        images.enumerateObjectsUsingBlock(fetchImage)
+        assets.enumerateObjects(fetchImage)
     }
     
-    func fetchImage(object: AnyObject, index: Int, _: UnsafeMutablePointer<ObjCBool>) {
+    func fetchImage(_ object: AnyObject, index: Int, _: UnsafeMutablePointer<ObjCBool>) {
         let asset = object as! PHAsset
         
         let options = PHImageRequestOptions()
-        options.synchronous = true
-        options.deliveryMode = .HighQualityFormat
-        options.resizeMode = .Exact
+        options.isSynchronous = true
+        options.deliveryMode = .highQualityFormat
+        options.resizeMode = .exact
         
-        self.imageManager.requestImageForAsset(asset,
+        self.imageManager.requestImage(for: asset,
             targetSize: self.imageSize,
-            contentMode: .AspectFill,
+            contentMode: .aspectFill,
             options: options,
             resultHandler: {
                 image, info in
-                debugPrint(image)
                 self.cachedImages.append((image as UIImage?)!)
         })
     }
     
     func updateImageView() -> Void {
-        print("\(imageIndex + 1)/\(images.count)")
+        print("\(imageIndex + 1)/\(assets.count)")
         let image = cachedImages[imageIndex]
         self.photoImageView.image = image
         imageIndex = nextImageIndex()
     }
     
     func nextImageIndex() -> Int {
-        return ( imageIndex + 1 ) % ( images.count )
+        return ( imageIndex + 1 ) % ( assets.count )
     }
     
-    @IBAction func imageTap(sender: UITapGestureRecognizer) {
+    @IBAction func imageTap(_ sender: UITapGestureRecognizer) {
         if let timer = self.timer {
             timer.invalidate()
             self.timer = nil
@@ -86,7 +108,7 @@ class ViewController: UIViewController {
     }
     
     func startTimer() {
-        self.timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "updateImageView", userInfo: nil, repeats: true)
+        self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(ViewController.updateImageView), userInfo: nil, repeats: true)
     }
 
 }
