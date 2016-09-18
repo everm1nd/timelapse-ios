@@ -31,6 +31,10 @@ class SlideshowViewController: UIViewController {
         updateImageView() // update it once, becasue timer first fires after N miliseconds
         startTimer()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        stopTimer()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -83,13 +87,13 @@ class SlideshowViewController: UIViewController {
         self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(SlideshowViewController.updateImageView), userInfo: nil, repeats: true)
     }
     
+    func stopTimer() {
+        timer.invalidate()
+        self.timer = nil
+    }
+    
     func toggleTimer() {
-        if let timer = self.timer {
-            timer.invalidate()
-            self.timer = nil
-        } else {
-            startTimer()
-        }
+        (self.timer != nil) ? stopTimer() : startTimer()
     }
 
 }
