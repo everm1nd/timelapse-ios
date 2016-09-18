@@ -13,19 +13,21 @@ class SlideshowViewController: UIViewController {
 
     @IBOutlet weak var photoImageView: UIImageView!
     
-    var assets: PHFetchResult<PHAsset>!
+    var assets = [PHAsset]()
     var imageManager: PHImageManager!
     var imageIndex = 0;
     var imageSize: CGSize!
     
     var timer: Timer!
     
-    var cachedImages = [UIImage]()
+    var cachedImages = [PHAsset: UIImage]()
+    
+    let storage = AssetsStorage.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        assets = PHAsset.fetchAssets(with: .image, options: nil)
+        assets = storage.sorted()
         imageManager = PHImageManager()
         warmupCache()
         updateImageView() // update it once, becasue timer first fires after N miliseconds
@@ -47,16 +49,15 @@ class SlideshowViewController: UIViewController {
         self.imageSize = CGSize(width: frame.width * sizeFactor,
             height: frame.height * sizeFactor)
         
-        assets.enumerateObjects(fetchImage)
+        for asset in assets { fetchImageFor(asset) }
     }
     
-    func fetchImage(_ object: AnyObject, index: Int, _: UnsafeMutablePointer<ObjCBool>) {
-        let asset = object as! PHAsset
-        
+    func fetchImageFor(_ asset: PHAsset) {
         let options = PHImageRequestOptions()
-        options.isSynchronous = true
+        options.isSynchronous = false // TODO: improve this with some kind of promise
         options.deliveryMode = .highQualityFormat
         options.resizeMode = .exact
+        options.isNetworkAccessAllowed = true // TODO: handle this carefully, because it's slow
         
         self.imageManager.requestImage(for: asset,
             targetSize: self.imageSize,
@@ -64,13 +65,14 @@ class SlideshowViewController: UIViewController {
             options: options,
             resultHandler: {
                 image, info in
-                self.cachedImages.append((image as UIImage?)!)
+                self.cachedImages[asset] = (image as UIImage?)!
         })
     }
     
     func updateImageView() -> Void {
         print("\(imageIndex + 1)/\(assets.count)")
-        let image = cachedImages[imageIndex]
+        let asset = assets[imageIndex]
+        let image = cachedImages[asset]
         self.photoImageView.image = image
         imageIndex = nextImageIndex()
     }

@@ -16,9 +16,15 @@ class Moment {
     init(collection: PHAssetCollection) {
         self.collection = collection
         
+        let options = PHFetchOptions()
+        options.includeAssetSourceTypes = .typeUserLibrary // should fix a problem with iCloud data for first time
+        
         let fetchResult = PHAsset.fetchAssets(in: collection, options: nil)
         fetchResult.enumerateObjects({ (asset, _, _) in
-            self.assets.append(asset )
+            // TODO: move filtration responsability to source of assets (e.g. controller)
+            if (asset.mediaType == .image) {
+                self.assets.append(asset)
+            }
         })
     }
 }
