@@ -9,7 +9,7 @@
 import UIKit
 import Photos
 
-class CollectionHeaderView: UICollectionReusableView {
+class AssetsCollectionHeaderView: UICollectionReusableView {
         
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var selectButton: UIButton!

@@ -9,69 +9,71 @@
 import UIKit
 import Photos
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "AssetCell"
 
 class SelectAssetsViewController: UICollectionViewController {
-    
-    class Moment {
-        var assets = [PHAsset]()
-        var collection: PHAssetCollection?
-        
-        init(collection: PHAssetCollection) {
-            self.collection = collection
-            
-            let fetchResult = PHAsset.fetchAssets(in: collection, options: nil)
-            fetchResult.enumerateObjects({ (asset, _, _) in
-                self.assets.append(asset )
-            })
-        }
-    }
     
     var moments = [Moment]()
     var imageManager: PHCachingImageManager!
     
-    let imageSize = CGSize(width: 150, height: 150)
-    let CellsPerRow = CGFloat(10)
+    @IBInspectable var imageSize: CGSize = CGSize(width: 150, height: 150)
+    @IBInspectable var CellsPerRow: CGFloat = CGFloat(10)
     
     let storage = AssetsStorage.sharedInstance
-    
-//    private let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let layout = collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
-        let side = self.view.frame.width / CellsPerRow
-//        layout.itemSize = self.view.frame.size
-        layout.itemSize = CGSize(width: side, height: side)
-        layout.minimumLineSpacing = 0
-        layout.minimumInteritemSpacing = 0
+        configureCellsView()
         
         self.imageManager = PHCachingImageManager()
-        
         collectionView?.allowsMultipleSelection = true
 
-        warmupImages()
+        fetchMoments()
     }
     
-//    func photoForIndexPath(indexPath: NSIndexPath) -> UIImage {
-//        debugPrint(indexPath)
-//        return moments[indexPath.section].photos[indexPath.row]
-//    }
+    // TODO: fix this function
+    func authorizeForPhotosAccess(success: @escaping () -> Void, failure: (() -> Void)? = nil) {
+        PHPhotoLibrary.requestAuthorization({ (status: PHAuthorizationStatus) in
+            switch (status) {
+            case .authorized:
+                success()
+                break;
+                
+            default:
+                if (failure != nil) {
+                    failure!()
+                } else {
+                    debugPrint("Photos authorization declined.")
+                    exit(0)
+                }
+                break;
+            }
+        })
+    }
+    
+    private func configureCellsView() {
+        let layout = collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
+        let margin = layout.minimumLineSpacing
+        // cells a square, so we calc only one side instead of H&W
+        // we subtract magrin to calculate width without air
+        let side = self.view.frame.width / CellsPerRow - margin
+        
+        layout.itemSize = CGSize(width: side, height: side)
+    }
     
     func assetForIndexPath(_ indexPath: IndexPath) -> PHAsset {
         return moments[indexPath.section].assets[indexPath.row]
     }
     
-    func warmupImages() -> Void {
+    func fetchMoments() -> Void {
         moments = [Moment]() // reset an array.
-                                 // TODO: better use deinitialize, right?
+                             // TODO: better use deinitialize, right?
         
         let collections = PHAssetCollection.fetchMoments(with: nil)
         collections.enumerateObjects({ collection, momentIndex, _ in
             self.moments.append(Moment(collection: collection ))
         })
-        
     }
 
     /*
@@ -121,30 +123,10 @@ class SelectAssetsViewController: UICollectionViewController {
         return cell
     }
     
-//    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-//        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! CollectionViewCell
-//        cell.layer.borderWidth = 5
-//        cell.layer.borderColor = UIColor.redColor().CGColor
-//        debugPrint("cell selected: ", cell)
-//    }
-//    
-//    override func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
-//        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! CollectionViewCell
-//        cell.layer.borderWidth = 0
-//        cell.layer.borderColor = UIColor.redColor().CGColor
-//    }
-    
-    
-//    // set cell size
-//    func collectionView(collectionView: UICollectionView,
-//                        layout collectionViewLayout: UICollectionViewLayout,
-//                               sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-//        return CGSize(width: 100, height: 100)
-//    }
-    
     override func collectionView(_ collectionView: UICollectionView,
                                  viewForSupplementaryElementOfKind kind: String,
                                                                    at indexPath: IndexPath) -> UICollectionReusableView {
+        // TODO: check if you can simplify this function
         //1
         switch kind {
         //2
@@ -152,9 +134,9 @@ class SelectAssetsViewController: UICollectionViewController {
             //3
             let headerView =
                 collectionView.dequeueReusableSupplementaryView(ofKind: kind,
-                                                                      withReuseIdentifier: "CollectionHeaderView",
+                                                                      withReuseIdentifier: "AssetsCollectionHeaderView",
                                                                       for: indexPath)
-                    as! CollectionHeaderView
+                    as! AssetsCollectionHeaderView
             // headerView.label.text = moments[indexPath.section].collection!.localizedTitle
             headerView.collection = moments[indexPath.section].collection
             headerView.section = indexPath.section

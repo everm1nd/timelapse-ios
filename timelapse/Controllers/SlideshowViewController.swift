@@ -25,39 +25,16 @@ class SlideshowViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        authorizeForPhotosAccess(
-            success: {
-                self.assets = PHAsset.fetchAssets(with: .image, options: nil)
-                self.imageManager = PHImageManager()
-                self.warmupCache()
-                self.updateImageView() // update it once, becasue timer first fires after N miliseconds
-                self.startTimer()
-            }
-        )
+        assets = PHAsset.fetchAssets(with: .image, options: nil)
+        imageManager = PHImageManager()
+        warmupCache()
+        updateImageView() // update it once, becasue timer first fires after N miliseconds
+        startTimer()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func authorizeForPhotosAccess(success: @escaping () -> Void, failure: (() -> Void)? = nil) {
-        PHPhotoLibrary.requestAuthorization({ (status: PHAuthorizationStatus) in
-            switch (status) {
-            case .authorized:
-                success()
-                break;
-                
-            default:
-                if (failure != nil) {
-                    failure!()
-                } else {
-                    debugPrint("Photos authorization declined.")
-                    exit(0)
-                }
-                break;
-            }
-        })
     }
     
     func warmupCache() -> Void {
