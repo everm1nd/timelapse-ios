@@ -30,6 +30,8 @@ class SelectAssetsViewController: UICollectionViewController {
         collectionView?.allowsMultipleSelection = true
 
         fetchMoments()
+        
+        scrollToBottom()
     }
     
     // TODO: fix this function
@@ -74,6 +76,13 @@ class SelectAssetsViewController: UICollectionViewController {
         collections.enumerateObjects({ collection, momentIndex, _ in
             self.moments.append(Moment(collection: collection ))
         })
+    }
+    
+    private func scrollToBottom() {
+        let section = (collectionView?.numberOfSections)! - 1
+        let itemNumber = (collectionView?.numberOfItems(inSection: section))! - 1
+        let indexPath = IndexPath(item: itemNumber, section: section)
+        self.collectionView?.scrollToItem(at: indexPath, at: .bottom, animated: false)
     }
 
     /*
