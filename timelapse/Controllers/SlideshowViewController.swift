@@ -11,7 +11,7 @@ import Photos
 
 class SlideshowViewController: UIViewController {
 
-    @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var photoImageView: BluredImage!
     
     var assets = [PHAsset]()
     var imageManager: PHImageManager!
@@ -50,6 +50,10 @@ class SlideshowViewController: UIViewController {
             height: frame.height * sizeFactor)
         
         for asset in assets { fetchImageFor(asset) }
+        
+        // do this in callback of promise. in other case it will
+        // unblur view automaticly
+        // photoImageView.blured = false
     }
     
     func fetchImageFor(_ asset: PHAsset) {
